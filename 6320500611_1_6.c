@@ -1,13 +1,10 @@
 #include <stdio.h>
 int main()
 {
-    unsigned long n,m,t,n2,m2,i,t2,j;
+    long n,m,t,i,j;
     char sl,ans;
 
-    scanf("%lu %lu %lu",&n2,&m2,&t2);
-    n = n2;
-    m = m2;
-    t = t2;
+    scanf("%ld %ld %ld",&n,&m,&t);
     scanf(" %c",&sl);
 
 
@@ -15,61 +12,36 @@ int main()
     {
         for(;t>0;)
         {
-            for(i=1;i<=n;i++)
+            t = t -n;
+            if(t<=0)
             {
-                if(t == 0)
-                {
-                    ans = 'L';
-                    break;
-                }
-                t--;
-
-            }
-            if(t == 0)
-            {
+                ans = 'L';
                 break;
             }
-            for(j=1;j<=m;j++)
+            t = t -m;
+            if(t<=0)
             {
-                if(t == 0)
-                {
-                    ans = 'R';
-                    break;
-                }
-                t--;
-
-
+                ans = 'R';
+                break;
             }
+
         }
     }
     else if (sl == 'R')
     {
         for(;t>0;)
         {
-            for(i=1;i<=m;i++)
+            t = t -m;
+            if(t<=0)
             {
-
-                if(t == 0)
-                {
-                    ans = 'R';
-                    break;
-                }
-                t--;
-
-            }
-            if(t == 0)
-            {
+                ans = 'R';
                 break;
             }
-            for(j=1;j<=n;j++)
+            t = t -n;
+            if(t<=0)
             {
-                if(t == 0)
-                {
-                    ans = 'L';
-                    break;
-                }
-                t--;
-
+                ans = 'L';
+                break;
             }
         }
 
