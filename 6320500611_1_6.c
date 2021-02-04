@@ -2,14 +2,13 @@
 int main()
 {
     unsigned long n,m,t,n2,m2,i,t2,j;
-    char sl,ans='E';
+    char sl,ans;
 
     scanf("%lu %lu %lu",&n2,&m2,&t2);
     n = n2;
     m = m2;
     t = t2;
-    fflush(stdin);
-    scanf("%c",&sl);
+    scanf(" %c",&sl);
 
 
     if(sl == 'L')
@@ -18,8 +17,13 @@ int main()
         {
             for(i=1;i<=n;i++)
             {
+                if(t == 0)
+                {
+                    ans = 'L';
+                    break;
+                }
                 t--;
-                printf("\nn%lu",t);
+
             }
             if(t == 0)
             {
@@ -27,8 +31,13 @@ int main()
             }
             for(j=1;j<=m;j++)
             {
+                if(t == 0)
+                {
+                    ans = 'R';
+                    break;
+                }
                 t--;
-                printf("\nm%lu",t);
+
 
             }
         }
@@ -46,7 +55,7 @@ int main()
                     break;
                 }
                 t--;
-                printf("\nm%lu",t);
+
             }
             if(t == 0)
             {
@@ -60,7 +69,7 @@ int main()
                     break;
                 }
                 t--;
-                printf("\nn%lu",t);
+
             }
         }
 
