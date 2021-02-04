@@ -15,7 +15,7 @@ int main()
     {
         printf("%d:%d a.m.",x,y);
     }
-    else if(time>=12.00&&time<=23.59)
+    else if(time>=12.00&&time<24.00)
     {
         if(x>12)
         {
