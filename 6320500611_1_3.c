@@ -5,4 +5,6 @@ int main()
 
     scanf("%llu",&n);
     printf("%d %d",n%3,n%11);
+
+    return 0;
 }
