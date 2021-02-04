@@ -1,64 +1,70 @@
 #include <stdio.h>
 int main()
 {
-    unsigned n,m;
-    int i;
-    long t;
+    unsigned long n,m,t,n2,m2,i,t2,j;
     char sl,ans='E';
 
-    scanf("%u %u %l",&n,&m,&t);
+    scanf("%lu %lu %lu",&n2,&m2,&t2);
+    n = n2;
+    m = m2;
+    t = t2;
     fflush(stdin);
     scanf("%c",&sl);
-    while(1)
+
+
+    if(sl == 'L')
     {
-        if(sl == 'R')
+        for(;t>0;)
         {
-            for(i=1; i<=n; i++)
+            for(i=1;i<=n;i++)
             {
-                if(t == 0)
-                {
-                    ans = 'R';
-                    break;
-                }
-                t = t - 1;
+                t--;
+                printf("\nn%lu",t);
             }
-            for(i=1; i<=m; i++)
+            if(t == 0)
             {
-                if(t == 0)
-                {
-                    ans = 'L';
-                    break;
-                }
-                t = t - 1;
+                break;
             }
-        }
-        else if(sl == 'L')
-        {
-            for(i=1; i<=m; i++)
+            for(j=1;j<=m;j++)
             {
-                if(t == 0)
-                {
-                    ans = 'L';
-                    break;
-                }
-                t = t -1;
+                t--;
+                printf("\nm%lu",t);
+
             }
-            for(i=1; i<=n; i++)
-            {
-                if(t == 0)
-                {
-                    ans = 'R';
-                    break;
-                }
-                t = t -1;
-            }
-        }
-        if(t <=0)
-        {
-            break;
         }
     }
+    else if (sl == 'R')
+    {
+        for(;t>0;)
+        {
+            for(i=1;i<=m;i++)
+            {
 
+                if(t == 0)
+                {
+                    ans = 'R';
+                    break;
+                }
+                t--;
+                printf("\nm%lu",t);
+            }
+            if(t == 0)
+            {
+                break;
+            }
+            for(j=1;j<=n;j++)
+            {
+                if(t == 0)
+                {
+                    ans = 'L';
+                    break;
+                }
+                t--;
+                printf("\nn%lu",t);
+            }
+        }
+
+    }
     printf("%c",ans);
 
     return 0;
